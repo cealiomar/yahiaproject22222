@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0B">
+<title>Precious Shield — سجلّ الضمان الرقمي</title>
+<meta name="description" content="تحقّق من ضمان منتجات Precious Shield للحماية وفعّله باسم سيارتك. امسح الكود أو أدخل رقم الضمان.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200..700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/thmanyah-sans-regular.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/thmanyah-display-black.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+<!-- ═══════════ brand mark, defined once ═══════════ -->
+<svg class="ps-defs" aria-hidden="true" focusable="false">
+  <symbol id="ps-mark" viewBox="50 207 495 428">
+    <path d="M438,531H162s28.9-41.1,28.9-41.1h246.6c8.2,0,14.3-6.5,16-13.2s-2.8-13.6-10.1-13.6l-91.6-.4c-18,0-41.9-9.8-46.3-29.7-5.6-25.3,5.5-50.3,27.2-64.3,13.8-8.9,29.2-12.7,46.1-13.5h165.7c0,0-32.2,42.2-32.2,42.2h-139.4c-8.2,1.8-15.3,4.6-18,12.6s-.3,6.4.8,7.9,4.3,3.4,6.8,3.4h96.3c10.7.1,20.9,4,29.4,9.9,9.5,6.6,14.4,17.2,15.5,28.6,2.2,24.3-8.7,46.8-29.3,60-10.5,6.7-22.5,11.4-36.4,11.4Z"/>
+    <path d="M117.6,505.9h-48.7c0,.1,27.2-105.6,27.2-105.6l139-.2c7.8,0,14-5.5,17.5-11.2,1.5-3.6,2-8.3,0-11.4s-5.7-5.4-10.1-5.4H76.5c0-.1-25.6-41.2-25.6-41.2h202.6c24.3,0,47.2,11.5,50.6,37.1,5.2,39.1-24.4,75.2-64.6,75.3l-106.6.5-15.2,62Z"/>
+    <path d="M381,261.2c-83-45.9-191.3-19.2-240.9,61.2l-35.2-.2c8.3-18.2,19.1-32.5,31.8-46.5,51.5-55.1,127.8-78.7,201.8-63.8,70.7,15.7,129.8,66,155.8,134.8l-33.4.4c-16.6-36.7-44.7-66.5-79.9-85.9Z"/>
+    <path d="M425.1,540.7h40.5c-32.8,49.1-84.3,81.9-141.8,91.2-74.9,11.5-150.2-17.9-197.6-76.8-9.4-12.8-17.7-25.4-24.1-40.8l34.1-.2c14.5,25.5,34.3,46.3,58.8,62,30.7,19.1,65.3,28.7,101.6,27.7,49.8-2.2,96-24.7,128.4-63.1Z"/>
+  </symbol>
+</svg>
+
+<!-- ═══════════ preloader ═══════════ -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <div class="loader__grid" aria-hidden="true"></div>
+  <div class="loader__inner">
+    <div class="loader__mark">
+      <svg class="mark-draw" viewBox="50 207 495 428" aria-hidden="true">
+        <defs>
+          <clipPath id="fillClip">
+            <rect id="fillRect" x="40" y="640" width="520" height="0"></rect>
+          </clipPath>
+        </defs>
+        <g class="mark-draw__stroke">
+          <path class="d-arc d-arc--t" d="M381,261.2c-83-45.9-191.3-19.2-240.9,61.2l-35.2-.2c8.3-18.2,19.1-32.5,31.8-46.5,51.5-55.1,127.8-78.7,201.8-63.8,70.7,15.7,129.8,66,155.8,134.8l-33.4.4c-16.6-36.7-44.7-66.5-79.9-85.9Z"/>
+          <path class="d-arc d-arc--b" d="M425.1,540.7h40.5c-32.8,49.1-84.3,81.9-141.8,91.2-74.9,11.5-150.2-17.9-197.6-76.8-9.4-12.8-17.7-25.4-24.1-40.8l34.1-.2c14.5,25.5,34.3,46.3,58.8,62,30.7,19.1,65.3,28.7,101.6,27.7,49.8-2.2,96-24.7,128.4-63.1Z"/>
+          <path class="d-let d-let--p" d="M117.6,505.9h-48.7c0,.1,27.2-105.6,27.2-105.6l139-.2c7.8,0,14-5.5,17.5-11.2,1.5-3.6,2-8.3,0-11.4s-5.7-5.4-10.1-5.4H76.5c0-.1-25.6-41.2-25.6-41.2h202.6c24.3,0,47.2,11.5,50.6,37.1,5.2,39.1-24.4,75.2-64.6,75.3l-106.6.5-15.2,62Z"/>
+          <path class="d-let d-let--s" d="M438,531H162s28.9-41.1,28.9-41.1h246.6c8.2,0,14.3-6.5,16-13.2s-2.8-13.6-10.1-13.6l-91.6-.4c-18,0-41.9-9.8-46.3-29.7-5.6-25.3,5.5-50.3,27.2-64.3,13.8-8.9,29.2-12.7,46.1-13.5h165.7c0,0-32.2,42.2-32.2,42.2h-139.4c-8.2,1.8-15.3,4.6-18,12.6s-.3,6.4.8,7.9,4.3,3.4,6.8,3.4h96.3c10.7.1,20.9,4,29.4,9.9,9.5,6.6,14.4,17.2,15.5,28.6,2.2,24.3-8.7,46.8-29.3,60-10.5,6.7-22.5,11.4-36.4,11.4Z"/>
+        </g>
+        <!-- the <use> MUST carry x/y/width/height: a bare <use> of a <symbol>
+             creates its viewport at 0,0 and would land offset from the strokes -->
+        <g class="mark-draw__fill" id="loaderFill" clip-path="url(#fillClip)">
+          <use href="#ps-mark" x="50" y="207" width="495" height="428"></use>
+        </g>
+      </svg>
+    </div>
+
+    <p class="loader__word mono">PRECIOUS&nbsp;SHIELD</p>
+
+    <div class="loader__count mono">
+      <span id="loaderPct">0</span><i>%</i>
+    </div>
+
+    <div class="loader__bar" aria-hidden="true"><i id="loaderBar"></i></div>
+    <p class="loader__hint" id="loaderHint">نجهّز السجل…</p>
+  </div>
+  <span class="loader__blade loader__blade--a" aria-hidden="true"></span>
+  <span class="loader__blade loader__blade--b" aria-hidden="true"></span>
+</div>
+
+<!-- ═══════════ chrome ═══════════ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><i></i></div>
+<div class="scrollbar" aria-hidden="true"><i id="scrollProgress"></i></div>
+<div class="rules" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<div class="top" id="topbar">
+<header class="head">
+  <a class="head__brand" href="#top" data-cursor="link">
+    <svg class="head__mark" aria-hidden="true"><use href="#ps-mark"></use></svg>
+    <span class="head__word mono">
+      <b>PRECIOUS SHIELD</b>
+      <i data-i18n="brand.sub">سجلّ الضمان الرقمي</i>
+    </span>
+  </a>
+
+  <nav class="head__nav">
+    <a href="#console" class="head__link mono" data-cursor="link" data-i18n="nav.verify">التحقق</a>
+    <a href="#how" class="head__link mono" data-cursor="link" data-i18n="nav.how">كيف يعمل</a>
+    <a href="#support" class="head__link mono" data-cursor="link" data-i18n="nav.support">الدعم</a>
+    <button class="iconbtn theme" id="themeBtn" data-cursor="link" aria-label="Toggle theme">
+      <svg class="t-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
+      <svg class="t-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+    </button>
+    <button class="iconbtn lang" id="langBtn" data-cursor="link" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"/></svg>
+      <span class="lang__label mono" id="langLabel">EN</span>
+    </button>
+  </nav>
+</header>
+</div>
+
+<main id="top">
+
+  <!-- ═══════════ hero ═══════════ -->
+  <section class="hero" id="hero">
+    <canvas class="hero__gl" id="gl" aria-hidden="true"></canvas>
+    <div class="hero__fallback" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="hero__body">
+      <p class="eyebrow mono reveal" data-rv>
+        <span class="eyebrow__dot" aria-hidden="true"></span>
+        <span data-i18n="hero.eyebrow">بطاقة الضمان الرقمية</span>
+      </p>
+
+      <h1 class="hero__title">
+        <span class="line__i" data-i18n="hero.t1">ضمانك</span>
+        <span class="line__i line__i--accent" data-i18n="hero.t2">ما يضيع</span>
+      </h1>
+
+      <p class="hero__lede reveal" data-rv data-i18n="hero.lede">امسح الكود الموجود على منتج Precious Shield، تأكّد من صلاحية ضمانك، وفعّله باسم سيارتك — كل ذلك من هذه الصفحة، بدون أي مكالمة.</p>
+
+      <div class="hero__cta reveal" data-rv>
+        <a href="#console" class="btn btn--solid" data-cursor="btn" data-magnet>
+          <span data-i18n="hero.cta">افحص ضمانك الآن</span>
+          <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="btn btn--ghost" data-cursor="btn" id="heroScan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M4 12h16"/></svg>
+          <span data-i18n="hero.scan">امسح الكود</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero__foot mono">
+      <span data-i18n="hero.m1">فيلم حماية ذاتي الالتئام</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span data-i18n="hero.m2">ضمان ١٠ – ١٢ سنة</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span data-i18n="hero.m3">أربعة منتجات</span>
+      <a class="hero__scroll" href="#console" data-cursor="link">
+        <span data-i18n="hero.scroll">انزل</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- product strip — sits under the hero, loops with no seam -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__run">
+      <span class="tk"><b>PS CRYSTAL</b><i>10Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS TITANIUM</b><i>12Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS SATIN</b><i>10Y</i><em>SATIN</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS STEALTH</b><i>10Y</i><em>MATTE</em></span><span class="tk__d"></span>
+    </div>
+    <div class="ticker__run" aria-hidden="true">
+      <span class="tk"><b>PS CRYSTAL</b><i>10Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS TITANIUM</b><i>12Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS SATIN</b><i>10Y</i><em>SATIN</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS STEALTH</b><i>10Y</i><em>MATTE</em></span><span class="tk__d"></span>
+    </div>
+    <div class="ticker__run" aria-hidden="true">
+      <span class="tk"><b>PS CRYSTAL</b><i>10Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS TITANIUM</b><i>12Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS SATIN</b><i>10Y</i><em>SATIN</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS STEALTH</b><i>10Y</i><em>MATTE</em></span><span class="tk__d"></span>
+    </div>
+    <div class="ticker__run" aria-hidden="true">
+      <span class="tk"><b>PS CRYSTAL</b><i>10Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS TITANIUM</b><i>12Y</i><em>GLOSS</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS SATIN</b><i>10Y</i><em>SATIN</em></span><span class="tk__d"></span>
+      <span class="tk"><b>PS STEALTH</b><i>10Y</i><em>MATTE</em></span><span class="tk__d"></span>
+    </div>
+  </div>
+
+  <!-- ═══════════ console ═══════════ -->
+  <section class="sec console" id="console" data-state="idle">
+    <div class="sec__head">
+      <p class="idx mono reveal" data-rv><b>01</b><span data-i18n="con.idx">التحقق</span></p>
+      <h2 class="sec__title reveal" data-rv data-i18n="con.title">سجلّ الضمان</h2>
+      <p class="sec__lede reveal" data-rv data-i18n="con.lede">كل رول من Precious Shield يحمل رقمًا فريدًا. أدخله هنا لتعرف المنتج، ومدة الضمان، وهل هو مُفعَّل أم لا.</p>
+    </div>
+
+    <!-- step rail -->
+    <ol class="rail reveal" data-rv>
+      <li class="rail__i is-on" data-step="1"><b class="mono">01</b><span data-i18n="rail.1">التحقق</span></li>
+      <li class="rail__i" data-step="2"><b class="mono">02</b><span data-i18n="rail.2">بيانات السيارة</span></li>
+      <li class="rail__i" data-step="3"><b class="mono">03</b><span data-i18n="rail.3">الشهادة</span></li>
+    </ol>
+
+    <!-- ── panel 1 : lookup ── -->
+    <div class="panel panel--lookup reveal" data-rv id="pLookup">
+      <div class="panel__corner panel__corner--a" aria-hidden="true"></div>
+      <div class="panel__corner panel__corner--b" aria-hidden="true"></div>
+
+      <form class="lookup" id="lookupForm" novalidate>
+        <label class="lookup__label mono" for="wn" data-i18n="con.label">رقم الضمان</label>
+
+        <div class="lookup__row">
+          <div class="field">
+            <input class="field__in mono" id="wn" name="wn" type="text" inputmode="latin"
+                   autocomplete="off" spellcheck="false" placeholder="PS-2026-000123"
+                   aria-describedby="wnHelp">
+            <span class="field__line" aria-hidden="true"></span>
+            <button class="field__scan" type="button" id="scanBtn" data-cursor="btn" aria-label="Scan QR">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/>
+                <path d="M14 14h3v3h-3zM20.5 14v3M17.5 20.5h3M14 20.5h.01"/>
+              </svg>
+              <span class="mono" data-i18n="con.scanShort">مسح</span>
+            </button>
+          </div>
+
+          <button class="btn btn--solid btn--lg" type="submit" data-cursor="btn" data-magnet id="checkBtn">
+            <span class="btn__txt" data-i18n="con.check">افحص</span>
+            <span class="btn__load" aria-hidden="true"><i></i><i></i><i></i></span>
+          </button>
+        </div>
+
+        <p class="lookup__help mono" id="wnHelp" data-i18n="con.help">تجده على ملصق الكرتونة، أو على بطاقة الضمان، أو في فاتورة التركيب.</p>
+        <p class="lookup__err" id="wnErr" role="alert" hidden></p>
+      </form>
+
+      <!-- scanning overlay -->
+      <div class="scanfx" id="scanfx" aria-hidden="true">
+        <span class="scanfx__beam"></span>
+        <div class="scanfx__in">
+          <div class="scanfx__ring">
+            <svg viewBox="0 0 74 74"><circle class="scanfx__trk" cx="37" cy="37" r="35"/><circle class="scanfx__arc" cx="37" cy="37" r="35"/></svg>
+            <!-- no viewBox here on purpose: the symbol carries its own and
+                 scales to fit. a viewBox + bare <use> offsets the mark. -->
+            <b><svg><use href="#ps-mark"></use></svg></b>
+          </div>
+          <p class="scanfx__txt" id="scanfxTxt">نقرأ الرقم…</p>
+          <p class="scanfx__sub" id="scanfxSub">لا تسكّر الصفحة</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── panel 2 : result ── -->
+    <div class="panel panel--result" id="pResult" hidden>
+      <div class="res">
+        <header class="res__head">
+          <span class="tag" id="resTag"><i aria-hidden="true"></i><span id="resTagTx"></span></span>
+          <span class="res__serial mono" id="resSerial"></span>
+        </header>
+
+        <div class="remain" id="resRemain" hidden></div>
+
+        <div class="res__grid">
+          <div class="res__main">
+            <p class="res__kicker mono" data-i18n="res.product">المنتج</p>
+            <h3 class="res__product" id="resProduct"></h3>
+            <p class="res__finish" id="resFinish"></p>
+
+            <dl class="specs" id="resSpecs"></dl>
+          </div>
+
+          <div class="res__gauge">
+            <div class="gauge" id="gauge">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <circle class="gauge__trk" cx="100" cy="100" r="86"/>
+                <circle class="gauge__arc" cx="100" cy="100" r="86" id="gaugeArc"/>
+              </svg>
+              <div class="gauge__mid">
+                <b class="mono" id="gaugeNum">0</b>
+                <span id="gaugeUnit" data-i18n="res.daysLeft">يومًا متبقيًا</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="res__foot" id="resFoot"></footer>
+      </div>
+    </div>
+
+    <!-- ── panel 3 : activation ── -->
+    <div class="panel panel--form" id="pActivate" hidden>
+      <div class="fhead">
+        <p class="idx mono"><b>02</b><span data-i18n="act.idx">بيانات السيارة</span></p>
+        <h3 class="fhead__t" data-i18n="act.title">فعّل الضمان</h3>
+        <p class="fhead__s" data-i18n="act.sub">يُفعَّل الضمان مرة واحدة فقط ويُربط بالسيارة نهائيًا. راجع البيانات قبل الإرسال.</p>
+      </div>
+
+      <form class="form" id="actForm" novalidate>
+        <div class="form__grid">
+          <div class="ff">
+            <label class="ff__l mono" for="fCar" data-i18n="act.car">موديل السيارة</label>
+            <input class="ff__i" id="fCar" name="car" required placeholder="Toyota Land Cruiser 2024" autocomplete="off">
+            <span class="ff__e mono"></span>
+          </div>
+          <div class="ff">
+            <label class="ff__l mono" for="fPlate" data-i18n="act.plate">رقم اللوحة</label>
+            <input class="ff__i mono" id="fPlate" name="plate" required placeholder="ر ط ح 4821" autocomplete="off">
+            <span class="ff__e mono"></span>
+          </div>
+          <div class="ff">
+            <label class="ff__l mono" for="fVin" data-i18n="act.vin">رقم الشاسيه (VIN) — اختياري</label>
+            <input class="ff__i mono" id="fVin" name="vin" maxlength="17" placeholder="JTMHV05J004…" autocomplete="off">
+            <span class="ff__e mono"></span>
+          </div>
+          <div class="ff">
+            <label class="ff__l mono" for="fPhone" data-i18n="act.phone">جوال مالك السيارة</label>
+            <input class="ff__i mono" id="fPhone" name="phone" type="tel" required placeholder="+966 50 123 4567" autocomplete="off">
+            <span class="ff__e mono"></span>
+          </div>
+          <div class="ff">
+            <label class="ff__l mono" for="fCenter" data-i18n="act.center">مركز التركيب</label>
+            <input class="ff__i" id="fCenter" name="center" required placeholder="مركز الصقر للعناية بالسيارات" autocomplete="off" list="centers">
+            <datalist id="centers">
+              <option value="مركز الصقر للعناية بالسيارات"></option>
+              <option value="مركز النخبة — جدة"></option>
+              <option value="مركز الأمانة — القاهرة"></option>
+              <option value="Elite Detailing — Dubai"></option>
+            </datalist>
+            <span class="ff__e mono"></span>
+          </div>
+          <div class="ff">
+            <label class="ff__l mono" for="fDate" data-i18n="act.date">تاريخ التركيب</label>
+            <input class="ff__i mono" id="fDate" name="date" type="date" required>
+            <span class="ff__e mono"></span>
+          </div>
+        </div>
+
+        <label class="check" data-cursor="link">
+          <input type="checkbox" id="fAgree" required>
+          <span class="check__box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </span>
+          <span class="check__t" data-i18n="act.agree">أقرّ بأن البيانات صحيحة، وأوافق على شروط ضمان Precious Shield.</span>
+        </label>
+
+        <div class="form__act">
+          <button class="btn btn--solid btn--lg" type="submit" data-cursor="btn" data-magnet id="actBtn">
+            <span class="btn__txt" data-i18n="act.submit">تفعيل الضمان</span>
+            <span class="btn__load" aria-hidden="true"><i></i><i></i><i></i></span>
+          </button>
+          <button class="btn btn--ghost" type="button" id="actBack" data-cursor="btn" data-i18n="act.back">رجوع</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ── panel 4 : certificate ── -->
+    <div class="panel panel--cert" id="pCert" hidden>
+      <div class="cert" id="cert">
+        <div class="cert__wm" aria-hidden="true"><svg><use href="#ps-mark"></use></svg></div>
+        <div class="cert__top">
+          <svg class="cert__mark" aria-hidden="true"><use href="#ps-mark"></use></svg>
+          <div>
+            <p class="mono cert__brand">PRECIOUS SHIELD</p>
+            <p class="mono cert__kind" data-i18n="cert.kind">شهادة ضمان مُفعَّلة</p>
+          </div>
+          <span class="cert__seal mono" data-i18n="cert.seal">مُوثَّق</span>
+        </div>
+
+        <h3 class="cert__product" id="certProduct"></h3>
+        <dl class="cert__grid" id="certGrid"></dl>
+
+        <div class="cert__bot">
+          <div class="cert__qr" id="certQr" aria-hidden="true"></div>
+          <p class="mono cert__note" data-i18n="cert.note">هذه الشهادة صالحة إلكترونيًا ولا تحتاج ختمًا. تحقّق منها في أي وقت برقم الضمان.</p>
+        </div>
+      </div>
+
+      <div class="cert__act">
+        <button class="btn btn--solid" id="certPrint" data-cursor="btn" data-magnet>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2"/><rect x="7" y="14" width="10" height="6" rx="1"/></svg>
+          <span data-i18n="cert.print">احفظ / اطبع</span>
+        </button>
+        <button class="btn btn--ghost" id="certAgain" data-cursor="btn" data-i18n="cert.again">افحص رقمًا آخر</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ how ═══════════ -->
+  <section class="sec how" id="how">
+    <div class="sec__head">
+      <p class="idx mono reveal" data-rv><b>02</b><span data-i18n="how.idx">الطريقة</span></p>
+      <h2 class="sec__title reveal" data-rv data-i18n="how.title">ثلاث خطوات. لا أكثر.</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal" data-rv>
+        <b class="step__n mono">01</b>
+        <h3 class="step__t" data-i18n="how.s1t">امسح</h3>
+        <p class="step__p" data-i18n="how.s1p">وجّه كاميرا هاتفك إلى الكود على ملصق المنتج أو بطاقة الضمان. سيفتح هذا السجل ومعه رقمك جاهزًا.</p>
+      </li>
+      <li class="step reveal" data-rv>
+        <b class="step__n mono">02</b>
+        <h3 class="step__t" data-i18n="how.s2t">تحقّق</h3>
+        <p class="step__p" data-i18n="how.s2p">يظهر لك المنتج ومدة الضمان وحالته فورًا: جاهز للتفعيل، أم مُفعَّل، أم منتهٍ.</p>
+      </li>
+      <li class="step reveal" data-rv>
+        <b class="step__n mono">03</b>
+        <h3 class="step__t" data-i18n="how.s3t">فعّل</h3>
+        <p class="step__p" data-i18n="how.s3p">أدخل بيانات السيارة ومركز التركيب مرة واحدة، فتصدر لك شهادة ضمان رقمية باسمك.</p>
+      </li>
+    </ol>
+
+    <div class="stats reveal" data-rv>
+      <div class="stat"><b class="mono" data-count="12">0</b><span data-i18n="how.k1">سنة ضمان — PS TITANIUM</span></div>
+      <div class="stat"><b class="mono" data-count="4">0</b><span data-i18n="how.k2">منتجات في العائلة</span></div>
+      <div class="stat"><b class="mono" data-count="38">0</b><span data-i18n="how.k3">مركزًا معتمدًا</span></div>
+      <div class="stat"><b class="mono" data-count="99" data-suffix=".5%">0</b><span data-i18n="how.k4">دقة تتبّع الرولات</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ support ═══════════ -->
+  <section class="sec support" id="support">
+    <div class="support__in reveal" data-rv>
+      <p class="idx mono"><b>03</b><span data-i18n="sup.idx">الدعم</span></p>
+      <h2 class="sec__title" data-i18n="sup.title">رقمك لا يعمل؟</h2>
+      <p class="sec__lede" data-i18n="sup.lede">أحيانًا يتلف الملصق أو يُقصّ مع الفيلم. أرسل لنا صورة الفاتورة أو صورة الملصق وسنستخرج لك الرقم خلال ساعات العمل.</p>
+      <div class="support__cta">
+        <a class="btn btn--solid" href="https://wa.me/12294698342" target="_blank" rel="noopener" data-cursor="btn" data-magnet>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.94.51 3.76 1.4 5.33L2 22l4.96-1.55a9.8 9.8 0 0 0 5.08 1.4h.01c5.43 0 9.83-4.4 9.83-9.84A9.8 9.8 0 0 0 12.04 2zm5.72 13.9c-.24.68-1.4 1.3-1.93 1.35-.5.05-.98.23-3.3-.7-2.77-1.1-4.53-3.94-4.67-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.7-.34l.5.01c.16 0 .38-.06.6.46.22.53.75 1.87.82 2 .07.14.11.3.02.48-.09.19-.14.3-.27.47-.14.16-.29.36-.41.48-.14.14-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.21 1.36.27.13.43.11.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.32.07.11.07.64-.17 1.32z"/></svg>
+          <span data-i18n="sup.wa">راسلنا على واتساب</span>
+        </a>
+        <a class="btn btn--ghost" href="mailto:info@preciousshield.com" data-cursor="btn" data-i18n="sup.mail">info@preciousshield.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════ footer ═══════════ -->
+<footer class="foot">
+  <div class="foot__wm" aria-hidden="true"><svg><use href="#ps-mark"></use></svg></div>
+
+  <div class="foot__grid">
+    <div class="foot__brand">
+      <svg class="foot__mark" aria-hidden="true"><use href="#ps-mark"></use></svg>
+      <p class="foot__blurb" data-i18n="foot.blurb">أفلام حماية بمواصفات عالية، مصمَّمة لتتحمّل ظروف القيادة اليومية والمناخ القاسي مع الحفاظ على مظهر السيارة كما لو كانت جديدة، لسنوات.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram" data-cursor="link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="X" data-cursor="link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L4.8 21H1.6l7.5-8.6L1.2 3h6.6l4.5 5.6zm-1.1 16h1.8L7.6 4.8H5.7z"/></svg></a>
+        <a href="#" aria-label="TikTok" data-cursor="link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.6 2.6 0 1 1-2-2.5V9.6a5.8 5.8 0 1 0 5 5.7V9.1a6.7 6.7 0 0 0 4 1.3V7.5a3.9 3.9 0 0 1-4-3.9z"/></svg></a>
+        <a href="#" aria-label="Facebook" data-cursor="link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.2c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4V14h2.7v8z"/></svg></a>
+        <a href="#" aria-label="Snapchat" data-cursor="link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6c2.7 0 4.4 2 4.5 4.6 0 .7-.1 1.4-.1 2 .5.2.9 0 1.3-.2.6-.3 1.3.1 1.3.7 0 .6-.7.9-1.4 1.2-.5.2-1 .3-1 .7 0 .8 2 3.2 3.7 3.7.4.1.6.4.5.8-.2.7-1.6 1-2.4 1.1-.2.4-.1 1.1-.7 1.1-.6 0-1.3-.3-2.2-.2-1 .1-1.6 1.4-3.5 1.4s-2.5-1.3-3.5-1.4c-.9-.1-1.6.2-2.2.2-.6 0-.5-.7-.7-1.1-.8-.1-2.2-.4-2.4-1.1-.1-.4.1-.7.5-.8 1.7-.5 3.7-2.9 3.7-3.7 0-.4-.5-.5-1-.7-.7-.3-1.4-.6-1.4-1.2 0-.6.7-1 1.3-.7.4.2.8.4 1.3.2 0-.6-.1-1.3-.1-2C7.6 4.6 9.3 2.6 12 2.6z"/></svg></a>
+      </div>
+    </div>
+
+    <nav class="foot__col">
+      <h4 class="mono" data-i18n="foot.links">روابط سريعة</h4>
+      <a href="#console" data-cursor="link" data-i18n="foot.l1">التحقق من الضمان</a>
+      <a href="#how" data-cursor="link" data-i18n="foot.l2">كيف يعمل</a>
+      <a href="#" data-cursor="link" data-i18n="foot.l3">المنتجات</a>
+      <a href="#" data-cursor="link" data-i18n="foot.l4">المراكز المعتمدة</a>
+      <a href="#" data-cursor="link" data-i18n="foot.l5">الشراكة والتوزيع</a>
+    </nav>
+
+    <div class="foot__col foot__col--contact">
+      <h4 class="mono" data-i18n="foot.contact">تواصل</h4>
+      <a href="tel:+12294698342" class="mono" data-cursor="link">+1 229 469 8342</a>
+      <a href="mailto:info@preciousshield.com" class="mono" data-cursor="link">info@preciousshield.com</a>
+      <a href="https://wa.me/12294698342" target="_blank" rel="noopener" data-cursor="link" data-i18n="foot.wa">واتساب — متاح</a>
+      <p class="foot__addr" data-i18n="foot.addr">٣٠ شارع جولد، مكتب ٤٠٠<br>شيريدان، وايومنغ ٨٢٨٠١ — الولايات المتحدة</p>
+    </div>
+  </div>
+
+  <div class="foot__bar">
+    <p class="mono" data-i18n="foot.rights">© ٢٠٢٦ Precious Shield. جميع الحقوق محفوظة.</p>
+    <p class="mono foot__demo" data-i18n="foot.demo">بيانات هذه الصفحة تجريبية للعرض فقط</p>
+  </div>
+</footer>
+
+<!-- ═══════════ scanner modal ═══════════ -->
+<div class="scan" id="scanModal" hidden>
+  <div class="scan__bg" id="scanClose1"></div>
+  <div class="scan__box" role="dialog" aria-modal="true" aria-labelledby="scanTitle">
+    <header class="scan__head">
+      <h3 id="scanTitle" class="mono" data-i18n="scan.title">مسح كود الضمان</h3>
+      <button class="scan__x" id="scanClose2" aria-label="Close" data-cursor="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="scan__stage">
+      <video id="scanVideo" playsinline muted></video>
+      <div class="scan__reticle" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+      <p class="scan__msg mono" id="scanMsg"></p>
+    </div>
+    <p class="scan__hint mono" data-i18n="scan.hint">ضع الكود داخل الإطار. سيُقرأ تلقائيًا.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/logo.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/qr.js"></script>
+<script src="js/hero-gl.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
