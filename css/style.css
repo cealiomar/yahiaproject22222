@@ -586,6 +586,7 @@ html[lang="ar"] .remain__lb{font-family:var(--f-body);letter-spacing:.04em;
 
 .res__grid{display:grid;grid-template-columns:1fr auto;gap:clamp(24px,5vw,60px);align-items:start}
 @media (max-width:860px){.res__grid{grid-template-columns:1fr}}
+.res__main{min-width:0;width:100%}
 .res__kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-3)}
 .res__product{font-family:var(--f-mono);font-weight:700;
   font-size:clamp(1.7rem,4.4vw,3.1rem);line-height:1;margin-block:11px 7px;
@@ -757,6 +758,7 @@ html[lang="en"] .foot__col h4{font-family:var(--f-mono);font-size:10px;
 .foot__col a:hover{color:var(--paper)}
 .foot__col a:hover::before{opacity:1}
 .foot__col--contact a{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.03em}
+.phone-link{direction:ltr;unicode-bidi:isolate;text-align:left;white-space:nowrap}
 .foot__addr{font-size:12.5px;color:var(--paper-3);line-height:1.85;margin-block-start:4px}
 
 .foot__bar{position:relative;max-width:var(--maxw);margin-inline:auto;
@@ -903,12 +905,25 @@ html[lang="ar"] .cert__product{ font-variant-numeric:tabular-nums; }
 @media (max-width:1000px){
   .steps{grid-template-columns:1fr}       /* 3 into 2 columns left a dead grey cell */
   .stats{grid-template-columns:repeat(2,1fr)}
-  .res__grid{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .res__product,.specs dd.mono{text-align:center !important}
-  .res__head{justify-content:center}
+  .panel--result{padding:clamp(24px,3.4vw,36px)}
+  .res__grid{grid-template-columns:minmax(0,1fr) 180px;gap:24px;align-items:center}
+  .res__gauge{align-self:center}
+  .gauge{width:180px}
+  .specs{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .specs > div{padding:14px 16px;min-width:0}
+}
+
+@media (max-width:720px){
+  .res__grid{grid-template-columns:1fr;gap:24px}
+  .res__main{order:1}
+  .res__gauge{order:2}
+  .res__head{justify-content:center;text-align:center}
+  .res__product{text-align:center !important}
+  .res__finish{text-align:center}
+  .res__kicker{text-align:center}
   .remain{justify-content:center;text-align:center;
     border-inline-start:0;border-block-start:2px solid var(--red)}
-  .specs{width:100%}
+  .gauge{width:min(170px,48vw)}
 }
 
 /* ─────────── 16b. mobile — one centred column ─────────── */
@@ -941,7 +956,7 @@ html[lang="ar"] .cert__product{ font-variant-numeric:tabular-nums; }
   .ff__i{text-align:center}
   .check{justify-content:center;text-align:start}
   .stats{grid-template-columns:1fr 1fr}
-  .specs{grid-template-columns:1fr}
+  .specs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .specs > div{text-align:center}
   .specs dd.mono{text-align:center !important}
   .cert__top{justify-content:center;text-align:center}
@@ -960,6 +975,7 @@ html[lang="ar"] .cert__product{ font-variant-numeric:tabular-nums; }
 @media (max-width:400px){
   .tk em{display:none}
   .stats{grid-template-columns:1fr}
+  .specs{grid-template-columns:1fr}
 }
 
 /* ─────────── 17. print — the certificate, on its own ─────────── */
