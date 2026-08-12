@@ -584,8 +584,7 @@ html[lang="ar"] .remain__lb{font-family:var(--f-body);letter-spacing:.04em;
   font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.15;color:var(--red-txt)}
 .remain__s{font-size:12.5px;color:var(--paper-2)}
 
-.res__grid{display:grid;grid-template-columns:1fr auto;gap:clamp(24px,5vw,60px);align-items:start}
-@media (max-width:860px){.res__grid{grid-template-columns:1fr}}
+.res__grid{display:block;width:100%}
 .res__main{min-width:0;width:100%}
 .res__kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-3)}
 .res__product{font-family:var(--f-mono);font-weight:700;
@@ -594,7 +593,7 @@ html[lang="ar"] .remain__lb{font-family:var(--f-body);letter-spacing:.04em;
 html[dir="rtl"] .res__product{text-align:right}
 .res__finish{color:var(--paper-2);font-size:.95rem;margin-block-end:26px}
 
-.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+.specs{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line)}
 .specs > div{background:var(--ink-1);padding:16px 18px}
 .specs dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
@@ -602,22 +601,6 @@ html[dir="rtl"] .res__product{text-align:right}
 .specs dd{font-size:.94rem;line-height:1.45;word-break:break-word}
 .specs dd.mono{font-size:.88rem;letter-spacing:.04em;direction:ltr;text-align:start}
 html[dir="rtl"] .specs dd.mono{text-align:right}
-
-.res__gauge{display:grid;place-items:center;padding-block-start:4px}
-.gauge{position:relative;width:min(220px,62vw);aspect-ratio:1}
-.gauge svg{width:100%;height:100%;transform:rotate(-90deg)}
-.gauge__trk{fill:none;stroke:var(--line-2);stroke-width:9}
-.gauge__arc{fill:none;stroke:var(--red);stroke-width:9;stroke-linecap:round;
-  stroke-dasharray:540.4;stroke-dashoffset:540.4;
-  filter:drop-shadow(0 0 10px var(--red-glow));
-  transition:stroke-dashoffset 1.6s var(--e-out),stroke .5s}
-.gauge--ok .gauge__arc{stroke:var(--ok)}
-.gauge--warn .gauge__arc{stroke:var(--warn)}
-.gauge--dead .gauge__arc{stroke:var(--dead);filter:none}
-.gauge__mid{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:5px}
-.gauge__mid b{font-family:var(--f-mono);font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;
-  line-height:1;font-variant-numeric:tabular-nums}
-.gauge__mid span{font-size:11px;color:var(--paper-3);padding-inline:8px}
 
 .res__foot{margin-block-start:30px;padding-block-start:24px;border-block-start:1px solid var(--line);
   display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -838,7 +821,7 @@ html[lang="ar"] :where(
   .step__t,.step__p,.res__finish,.res__msg,.check__t,.foot__blurb,
   .foot__addr,.remain__v,.remain__s,.cert__kind,.cert__note,.lookup__help,
   .scan__msg,.scan__hint,.toast,.eyebrow,.idx,.rail__i,.ff__l,.stat span,
-  .gauge__mid span,.tag,.cert__seal,.foot__col h4,.foot__col a,.head__word i,
+  .tag,.cert__seal,.foot__col h4,.foot__col a,.head__word i,
   .lookup__label,.scanfx__txt,.hero__foot,.foot__bar,.head__link,.btn
 ){
   letter-spacing:0;
@@ -890,13 +873,11 @@ html[lang="ar"] .specs dt,
 html[lang="ar"] .cert__grid dt{
   font-family:var(--f-body);font-size:12px;letter-spacing:0;text-transform:none;
 }
-html[lang="ar"] .gauge__mid span{ font-size:12px;line-height:1.5 }
 html[lang="ar"] .tag,
 html[lang="ar"] .cert__seal{ font-size:13px }
 
 /* Arabic numerals stay Latin and tabular so columns line up */
 html[lang="ar"] .mono,
-html[lang="ar"] .gauge__mid b,
 html[lang="ar"] .stat b,
 html[lang="ar"] .res__product,
 html[lang="ar"] .cert__product{ font-variant-numeric:tabular-nums; }
@@ -906,24 +887,17 @@ html[lang="ar"] .cert__product{ font-variant-numeric:tabular-nums; }
   .steps{grid-template-columns:1fr}       /* 3 into 2 columns left a dead grey cell */
   .stats{grid-template-columns:repeat(2,1fr)}
   .panel--result{padding:clamp(24px,3.4vw,36px)}
-  .res__grid{grid-template-columns:minmax(0,1fr) 180px;gap:24px;align-items:center}
-  .res__gauge{align-self:center}
-  .gauge{width:180px}
   .specs{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
   .specs > div{padding:14px 16px;min-width:0}
 }
 
 @media (max-width:720px){
-  .res__grid{grid-template-columns:1fr;gap:24px}
-  .res__main{order:1}
-  .res__gauge{order:2}
   .res__head{justify-content:center;text-align:center}
   .res__product{text-align:center !important}
   .res__finish{text-align:center}
   .res__kicker{text-align:center}
   .remain{justify-content:center;text-align:center;
     border-inline-start:0;border-block-start:2px solid var(--red)}
-  .gauge{width:min(170px,48vw)}
 }
 
 /* ─────────── 16b. mobile — one centred column ─────────── */

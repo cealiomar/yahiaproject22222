@@ -478,19 +478,6 @@ const Con = (() => {
     $('#resSpecs').innerHTML = rows.map(([k, v, m]) =>
       `<div><dt>${t(k)}</dt><dd class="${m ? 'mono' : ''}">${esc(v)}</dd></div>`).join('');
 
-    /* gauge */
-    const g = $('#gauge'), arc = $('#gaugeArc'), num = $('#gaugeNum'), unit = $('#gaugeUnit');
-    const C = 540.4;
-    let pctv = 0, n = 0, u = t('g.none'), cls = 'gauge';
-    if (res.status === 'pending') { pctv = 1; n = P.years; u = P.years > 10 ? t('unit.year') : t('unit.years'); cls += ' gauge--warn'; }
-    else if (res.status === 'active') { pctv = clamp(res.daysLeft / res.totalDays, 0, 1); n = res.daysLeft; u = t('g.daysLeft'); cls += ' gauge--ok'; }
-    else if (res.status === 'expired') { pctv = 0; n = 0; u = t('g.expired'); cls += ' gauge--dead'; }
-    else { pctv = 0; n = 0; u = t('g.none'); cls += ' gauge--dead'; }
-    g.className = cls;
-    unit.textContent = u;
-    requestAnimationFrame(() => { arc.style.strokeDashoffset = C * (1 - pctv); });
-    countTo(num, n, quiet);
-
     /* footer */
     const foot = $('#resFoot');
     foot.innerHTML = `<p class="res__msg">${esc(t('msg.' + res.status))}</p>`;
